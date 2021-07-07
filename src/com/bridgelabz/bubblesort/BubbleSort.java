@@ -9,11 +9,11 @@ public class BubbleSort
 	{		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the string");
-		String str = scanner.nextLine();
+		String string = scanner.nextLine();
 		scanner.close();
 		
 		//converting string to array
-		String[] arrayToSort = str.toLowerCase().split(" ");
+		String[] arrayToSort = string.toLowerCase().split(" ");
 		
 		//computation for bubble sort
 		for (int i = 0; i < arrayToSort.length; i++) 

@@ -9,13 +9,13 @@ public class BinarySearch
 	{
 		System.out.println("Enter the string");
 		Scanner scanner = new Scanner(System.in);
-		String str = scanner.nextLine();
+		String string = scanner.nextLine();
 		System.out.println("Enter the word to find");
 		String value  = scanner.next().toLowerCase();
 		scanner.close();
 		
 		//converting string to array
-		String[] words = str.toLowerCase().split(" ");
+		String[] words = string.toLowerCase().split(" ");
 		
 		//sorting the elements in arrays
 		Arrays.sort(words);
