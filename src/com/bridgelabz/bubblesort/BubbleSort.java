@@ -13,22 +13,22 @@ public class BubbleSort
 		scanner.close();
 		
 		//converting string to array
-		String[] arrayToSort = string.toLowerCase().split(" ");
+		String[] wordsToSort = string.toLowerCase().split(" ");
 		
 		//computation for bubble sort
-		for (int i = 0; i < arrayToSort.length; i++) 
+		for (int i = 0; i < wordsToSort.length; i++) 
 		{
-			for (int j = i; j < arrayToSort.length; j++) 
+			for (int j = i; j < wordsToSort.length; j++) 
 			{
 				//swap value if value > next value
-				if(arrayToSort[i].compareTo(arrayToSort[j]) > 0 )
+				if(wordsToSort[i].compareTo(wordsToSort[j]) > 0 )
 				{
-					String temp = arrayToSort[i];
-					arrayToSort[i] = arrayToSort[j];
-					arrayToSort[j] = temp;
+					String temp = wordsToSort[i];
+					wordsToSort[i] = wordsToSort[j];
+					wordsToSort[j] = temp;
 				}
 			}
 		}
-		System.out.println("After sorting : "+Arrays.toString(arrayToSort));
+		System.out.println("After sorting : "+Arrays.toString(wordsToSort));
 	}
 }
