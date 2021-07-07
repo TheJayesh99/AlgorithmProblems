@@ -11,7 +11,7 @@ public class BinarySearch
 		Scanner scanner = new Scanner(System.in);
 		String string = scanner.nextLine();
 		System.out.println("Enter the word to find");
-		String value  = scanner.next().toLowerCase();
+		String valueToFind  = scanner.next().toLowerCase();
 		scanner.close();
 		
 		//converting string to array
@@ -29,13 +29,13 @@ public class BinarySearch
 		{
 			int mid = (min+max) / 2 ;
 			//mid value equals to value
-			if(value.compareTo(words[mid]) == 0)
+			if(valueToFind.compareTo(words[mid]) == 0)
 			{
-				System.out.println(value+" Found ");
+				System.out.println(valueToFind+" Found ");
 				break;
 			}
 			//value is less than mid value 
-			else if (value.compareTo(words[mid] )< 0)
+			else if (valueToFind.compareTo(words[mid] )< 0)
 				{
 					max = mid-1;
 				}
@@ -47,7 +47,7 @@ public class BinarySearch
 			//if element not found
 			if(min > max)
 			{
-				System.out.println(value+" not found");
+				System.out.println(valueToFind+" not found");
 			}
 			
 		}
