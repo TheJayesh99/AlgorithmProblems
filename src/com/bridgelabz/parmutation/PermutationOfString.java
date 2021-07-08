@@ -59,12 +59,6 @@ public class PermutationOfString
 		return fact;
 	}
 
-
-
-	
-
-
-
 		private void permute(String str, int l, int r,String[]  permutationUsingArray,int count)
 	    {
 			
