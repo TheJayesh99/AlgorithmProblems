@@ -16,6 +16,10 @@ public class BubbleSort
 		String[] wordsToSort = string.toLowerCase().split(" ");
 		
 		//computation for bubble sort
+		bubbleSort(wordsToSort);
+	}
+
+	private static <T extends Comparable<T>> void bubbleSort(T[] wordsToSort) {
 		for (int i = 0; i < wordsToSort.length; i++) 
 		{
 			for (int j = i; j < wordsToSort.length; j++) 
@@ -23,7 +27,7 @@ public class BubbleSort
 				//swap value if value > next value
 				if(wordsToSort[i].compareTo(wordsToSort[j]) > 0 )
 				{
-					String temp = wordsToSort[i];
+					T temp = wordsToSort[i];
 					wordsToSort[i] = wordsToSort[j];
 					wordsToSort[j] = temp;
 				}

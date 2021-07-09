@@ -12,11 +12,12 @@ public class BinarySearch
 		String string = scanner.nextLine();
 		System.out.println("Enter the word to find");
 		String valueToFind  = scanner.next().toLowerCase();
-		scanner.close();
-		
-		//converting string to array
+		scanner.close();		
 		String[] words = string.toLowerCase().split(" ");
-		
+		binarySearch(words, valueToFind);
+	}
+
+	private static <T extends Comparable<T>> void binarySearch(T[] words, T valueToFind) {		
 		//sorting the elements in arrays
 		Arrays.sort(words);
 		
@@ -29,7 +30,7 @@ public class BinarySearch
 		{
 			int mid = (min+max) / 2 ;
 			//mid value equals to value
-			if(valueToFind.compareTo(words[mid]) == 0)
+			if(valueToFind.compareTo((T)words[mid]) == 0)
 			{
 				System.out.println(valueToFind+" Found ");
 				break;
