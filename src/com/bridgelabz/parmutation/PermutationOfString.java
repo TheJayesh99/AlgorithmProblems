@@ -1,6 +1,5 @@
 package com.bridgelabz.parmutation;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class PermutationOfString 
@@ -10,12 +9,12 @@ public class PermutationOfString
 		String str = "abc";
 
 		int n = str.length();
-		int count = 0;
+		System.out.println("permutation using recursive");
+		//permutation using recursive
 		PermutationOfString permutation = new PermutationOfString();
-		String[] permutationUsingArray = new String[getfactorial(str)];
-		permutation.permute(str, 0, n-1,permutationUsingArray,count);
-
-		System.out.println(Arrays.toString(permutationUsingArray));
+		permutation.permute(str, 0, n-1);
+		System.out.println("permutation using iterative");
+		//permutation using iterative
 		for (int i=0;i<getfactorial(str);i++)
 		{
 			LinkedList<String> charlist = stringbuilder(str);
@@ -41,6 +40,7 @@ public class PermutationOfString
 		}
 	}
 
+	//linked list to act as string builder
 	private static LinkedList<String> stringbuilder(String str) {
 		LinkedList<String> charlist = new LinkedList<>();
 		char[] character = str.toCharArray();
@@ -50,6 +50,7 @@ public class PermutationOfString
 		return charlist;
 	}
 
+	//finding factorial
 	private static int getfactorial(String str) {
 		int fact = 1;
 		for (int i = 2; i <=str.length(); i++)
@@ -58,22 +59,23 @@ public class PermutationOfString
 		}
 		return fact;
 	}
-
-		private void permute(String str, int l, int r,String[]  permutationUsingArray,int count)
+	
+		//function to calculate permutation
+		private void permute(String str, int l, int r)
 	    {
 			
 	        
 			if (l == r)
 			{
 				System.out.println(str);
-				permutationUsingArray[count++]= str;
+				
 			}
 	        else
 	        {
 	            for (int i = l; i <= r; i++)
 	            {
 	                str = swap(str,l,i);
-	                permute(str, l+1, r,permutationUsingArray,count);
+	                permute(str, l+1, r);
 	                str = swap(str,l,i);
 	            }
 	        }
@@ -81,7 +83,7 @@ public class PermutationOfString
 	    }
 		
 		
-		
+		//swap function
 		public String swap(String a, int i, int j)
 	    {
 	        char temp;
